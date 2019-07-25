@@ -1,0 +1,36 @@
+{
+  "name": "margostats-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.4.13",
+    "agenda": "^2.0.2",
+    "agendash": "^1.0.0",
+    "apollo-server-express": "^2.6.8",
+    "dotenv": "^8.0.0",
+    "eventemitter2": "^5.0.1",
+    "express": "^4.17.1",
+    "graphql": "^14.4.2",
+    "graphql-rate-limit": "^2.0.1",
+    "knex": "^0.18.1",
+    "mysql2": "^1.6.5",
+    "node-fetch": "^2.6.0",
+    "rambda": "^2.11.1",
+    "typescript": "^3.5.3",
+    "x-ray": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/agenda": "^2.0.4",
+    "@types/dotenv": "^6.1.1",
+    "@types/graphql": "^14.2.2",
+    "@types/node-fetch": "^2.3.7",
+    "@types/x-ray": "^2.3.3"
+  }
+}
