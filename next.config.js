@@ -1,7 +1,7 @@
 // next.config.js 
 const withCSS = require('@zeit/next-css')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: true,
+  enabled: false,
 })
 
 module.exports = withBundleAnalyzer(

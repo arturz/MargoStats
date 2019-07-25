@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "dev": "next",
-    "build": "next build",
+    "build-client": "next build",
+    "build-server": "cd server/src && tsc",
+    "build": "concurrently \"npm run build-client\" \"npm run build-server\"",
     "start": "next start",
     "x": "node server"
   },
