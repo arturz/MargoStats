@@ -1,15 +1,14 @@
 import Card from './Card'
 import MonthPicker from './LeftPanel/MonthPicker'
 import Donate from './LeftPanel/Donate'
-import ScrollTop from './ScrollTop'
 import { ReactChild } from 'react'
 
-export default ({ month, hideScrollButton = false, children }: { month: string, hideScrollButton?: boolean, children?: ReactChild }) =>
+export default ({ month, children }: { month: string, children?: ReactChild }) =>
   <div className="col-lg-4">
-    <div className="sticky-top">
+    <div className="sticky-top mb-3">
       <style jsx>{`
         div {
-          top: 1rem;
+          top: 86px;
         }
       `}</style>
       <Card>
@@ -23,10 +22,5 @@ export default ({ month, hideScrollButton = false, children }: { month: string, 
       <Card flat={true}>
         <Donate />
       </Card>
-      { hideScrollButton || (
-        <div className="d-none d-lg-block">
-          <ScrollTop />
-        </div>
-      ) }
     </div>
   </div>

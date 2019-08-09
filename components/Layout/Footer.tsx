@@ -13,5 +13,7 @@ export default () =>
       <a href="https://bootswatch.com/darkly/" target="_blank" rel="noopener noreferrer">
         Darkly
       </a>
+      { ' | ' }
+      Strona aktualizuje się około północy.
     </div>
   </footer>

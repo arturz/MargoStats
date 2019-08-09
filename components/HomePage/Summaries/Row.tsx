@@ -9,5 +9,5 @@ export default ({ index, nick, minutes }: { index: number, nick: string, minutes
         children={nick}
       />
     </td>
-    <td>{ `${Math.ceil(minutes / 60)} godzin` }</td>
+    <td>{ `${Math.ceil(minutes / 60)}h` }</td>
   </tr>

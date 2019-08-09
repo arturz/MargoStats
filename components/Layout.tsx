@@ -14,7 +14,12 @@ export default ({ children }) =>
       <meta name="keyword" content="Margonem, ciekawostki, statystyki, stats, statistics, MMORPG, MMORPG PL, online, gra, gry, games, bonus" />
       <meta name="description" content="Sprawdź, kto grał najwięcej w Margonem - dynamiczną grę MMORPG w przeglądarce, w której można grać aż sześcioma profesjami, w tym wojownikiem, magiem, łowcą, tropicielem, tancerzem ostrzy lub paladynem!" />
       <meta name="robots" content="all" />
-      <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
+      <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+      <link rel="manifest" href="/static/manifest.json" />
+      <meta name="apple-mobile-web-app-capable" content="yes"/>
+      <meta name="apple-mobile-web-app-status-bar-style" content="#303030"/>
+      <meta name="apple-mobile-web-app-title" content="MargoStats"/>
+      <link rel="apple-touch-icon" href="/static/apple-touch-icon.png"/>
     </Head>
     <style jsx global>{`
       html, body {

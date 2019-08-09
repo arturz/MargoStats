@@ -3,11 +3,14 @@ const withCSS = require('@zeit/next-css')
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
   enabled: false,
 })
+const withOffline = require('next-offline')
 
-module.exports = withBundleAnalyzer(
-  withCSS({
-    cssLoaderOptions: {
-      url: false
-    }
-  })
+module.exports = withOffline(
+  withBundleAnalyzer(
+    withCSS({
+      cssLoaderOptions: {
+        url: false
+      }
+    })
+  )
 )

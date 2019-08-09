@@ -1,10 +1,10 @@
 import Row from './Row'
-import ScrollTop from '../../Layout/ScrollTop'
+import ResponsiveScrollTop from '../../Layout/ResponsiveScrollTop'
 import { Summaries } from '../../../types/Summary'
 
 export default ({ summaries, world, private: isPrivate }: { summaries: Summaries, world: string, private: boolean }) =>
   <>
-    <table className="table">
+    <table className="table table-sm">
       <thead>
         <tr>
           <th>#</th>
@@ -25,5 +25,5 @@ export default ({ summaries, world, private: isPrivate }: { summaries: Summaries
       }
       </tbody>
     </table>
-    <ScrollTop />
+    <ResponsiveScrollTop />
   </>

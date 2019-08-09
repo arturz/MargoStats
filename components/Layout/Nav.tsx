@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import Link from 'next/link'
 import { withRouter } from 'next/router'
-import { FaUser } from 'react-icons/fa'
+import { FaUser, FaBars } from 'react-icons/fa'
 import { ReactChild } from 'react'
 
 type NavLinkProps = {
@@ -19,25 +20,51 @@ const NavLink = ({ pathname, href, children }: NavLinkProps) =>
     </Link>
   </li>
 
-export default withRouter(({ router: { pathname } }) =>
-  <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div className="container">
-      <div className="navbar-collapse">
-        <ul className="navbar-nav mr-auto">
-          <NavLink href="/" pathname={pathname}>
-            Poszczególne światy
-          </NavLink>
-          <NavLink href="/top" pathname={pathname}>
-            Topka światów
-          </NavLink>
-          <NavLink href="/player" pathname={pathname}>
-            Sprawdź gracza
-          </NavLink>
-        </ul>
-        <div>
-          <FaUser />
+export default withRouter(({ router: { pathname } }) => {
+  const [collapsed, setCollapsed] = useState(false)
+
+  const toggle = () =>
+    setCollapsed(!collapsed)
+
+  return (
+    <nav className="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+      <div className="container">
+        <Link href="/">
+          <a className="navbar-brand">
+            <style jsx>{`
+              a {
+                margin-top: -10px;
+                margin-bottom: -10px;
+              }
+            `}</style>
+            <img src="/static/favicon-32x32.png" />
+          </a>
+        </Link>
+        <button className="navbar-toggler float-right" aria-label="Toggle navigation" onClick={toggle}>
+          <FaBars />
+        </button>
+        <div className={`navbar-collapse collapse ${collapsed ? 'show' : ''}`}>
+          <ul className="navbar-nav">
+            <NavLink href="/" pathname={pathname}>
+              Poszczególne światy
+            </NavLink>
+            <NavLink href="/top" pathname={pathname}>
+              Topka światów
+            </NavLink>
+            <NavLink href="/player" pathname={pathname}>
+              Sprawdź gracza
+            </NavLink>
+          </ul>
+          <ul className="nav navbar-nav ml-auto">
+            <NavLink href="/account" pathname={pathname}>
+              <span className="d-flex align-items-center">
+                <FaUser />
+                <span className="ml-2">Zaloguj</span>
+              </span>
+            </NavLink>
+          </ul>
         </div>
       </div>
-    </div>
-  </nav>
-)
+    </nav>
+  )
+})

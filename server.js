@@ -24,6 +24,10 @@ nextApp.prepare().then(() => {
     res.status(200).sendFile('favicon.ico', { root: __dirname + '/static/' })
   ))
 
+  app.get('/service-worker.js', (req, res) => (
+    res.status(200).sendFile('service-worker.js', { root: __dirname + '/.next/' })
+  ))
+
   app.get('*', (req, res) => {
     return handle(req, res)
   })

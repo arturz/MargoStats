@@ -1,5 +1,5 @@
 import Row from './Row'
-import ScrollTop from './ScrollTop'
+import ResponsiveScrollTop from '../../Layout/ResponsiveScrollTop'
 import { Summaries } from '../../../types/Summary'
 
 export default ({ summaries }: { summaries: Summaries }) =>
@@ -28,5 +28,5 @@ export default ({ summaries }: { summaries: Summaries }) =>
       }
       </tbody>
     </table>
-    <ScrollTop />
+    <ResponsiveScrollTop />
   </>
