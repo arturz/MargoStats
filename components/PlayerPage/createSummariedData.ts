@@ -22,11 +22,11 @@ export default ({ charactersWithMinutesPlayed, month }: ChartProps) => {
     minutes.forEach(({ day, minutes }) => {
       const index = new Date(`${day}Z`).getDate() - 1
       if(data[index]){
-        data[index] += minutes
+        data[index] += minutes / 60
         return
       }
 
-      data[index] = minutes
+      data[index] = minutes / 60
     })
   })
 

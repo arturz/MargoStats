@@ -33,14 +33,14 @@ export default withRouter(({ router: { pathname } }) => {
           <a className="navbar-brand">
             <style jsx>{`
               a {
-                margin-top: -10px;
-                margin-bottom: -10px;
+                margin-top: -20px;
+                margin-bottom: -20px;
               }
             `}</style>
-            <img src="/static/favicon-32x32.png" />
+            <img src="favicon.ico" />
           </a>
         </Link>
-        <button className="navbar-toggler float-right" aria-label="Toggle navigation" onClick={toggle}>
+        <button className="navbar-toggler float-right" aria-label="Rozwiń menu" onClick={toggle}>
           <FaBars />
         </button>
         <div className={`navbar-collapse collapse ${collapsed ? 'show' : ''}`}>

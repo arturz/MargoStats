@@ -4,6 +4,7 @@ import initWorlds from './initWorlds'
 import initDailyStats from './initDailyStats'
 import initDailyStatsSummaries from './initDailyStatsSummaries'
 import initDailyStatsTopSummaries from './initDailyStatsTopSummaries'
+import initUsers from './initUsers'
 import { mysqlHost, mysqlUser, mysqlPassword, mysqlDatabase }  from '../../config'
 
 const options = {
@@ -35,6 +36,7 @@ const initTables = async ({ knex } : { knex: createKnex }) => {
     await initDailyStats({ knex })
     await initDailyStatsSummaries({ knex })
     await initDailyStatsTopSummaries({ knex })
+    await initUsers({ knex })
   } catch(error) {
     console.error(error)
     process.exit(1)

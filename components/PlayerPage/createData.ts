@@ -22,7 +22,7 @@ export default ({ charactersWithMinutesPlayed, month }: ChartProps) => {
   charactersWithMinutesPlayed.forEach(({ nick, world, minutes }) => {
     const data = []
     minutes.forEach(({ day, minutes }) => {
-      data[new Date(`${day}Z`).getDate() - 1] = minutes
+      data[new Date(`${day}Z`).getDate() - 1] = minutes / 60
     })
 
     datasets.push({
