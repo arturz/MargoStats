@@ -15,13 +15,14 @@ export default ({ profile }: { profile: Profile }) => {
   const handleSubmit = event => {
     event.preventDefault()
 
+    const profile = getProfile(url)
+    if(!profile)
+      return
+
     // @ts-ignore
-    Router.replace({
+    Router.push({
       pathname: Router.pathname,
-      query: {
-        ...Router.query,
-        profile: getProfile(url)
-      }
+      query: { ...Router.query, profile }
     })
   }
 

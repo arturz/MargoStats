@@ -11,7 +11,7 @@ type NavLinkProps = {
 }
 const NavLink = ({ pathname, href, children }: NavLinkProps) =>
   <li className={`nav-item ${pathname === href ? 'active' : ''}`}>
-    <Link href={href}>
+    <Link href={href} replace={true}>
       <a className="nav-link">
       {
         children
@@ -31,13 +31,7 @@ export default withRouter(({ router: { pathname } }) => {
       <div className="container">
         <Link href="/">
           <a className="navbar-brand">
-            <style jsx>{`
-              a {
-                margin-top: -20px;
-                margin-bottom: -20px;
-              }
-            `}</style>
-            <img src="favicon.ico" />
+            <img src="/static/logo.png" alt="logo" />
           </a>
         </Link>
         <button className="navbar-toggler float-right" aria-label="Rozwiń menu" onClick={toggle}>

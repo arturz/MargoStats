@@ -33,7 +33,7 @@ export default ({ charactersWithMinutesPlayed, month }: ChartProps) => {
   return {
     labels,
     datasets: [{
-      label: 'Ilość spędzonych minut',
+      label: 'Ilość spędzonych godzin',
       borderColor: '#00bc8c',
       data
     }]

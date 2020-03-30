@@ -12,6 +12,7 @@ export default ({ world, private: isPrivate, router }: WorldPrivateRouter) =>
       }
     }}
     scroll={false}
+    replace={true}
   >
     <a>
       <input 

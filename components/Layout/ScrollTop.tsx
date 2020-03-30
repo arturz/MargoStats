@@ -8,6 +8,7 @@ export default ({ className = '', ...props }) =>
     type="button"
     className={`btn btn-outline-success float-right ${className}`}
     onClick={scrollTop}
+    aria-hidden="true"
     {...props}
   >
     <FaAngleUp />

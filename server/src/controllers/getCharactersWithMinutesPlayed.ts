@@ -12,8 +12,10 @@ interface Props {
 }
 export default async ({ month, profile, requirePromo = isProduction }: Props) => {
   //user has no promo code
-  if(requirePromo && !(await hasPromoLink(profile)))
+  
+  /*if(requirePromo && !(await hasPromoLink(profile)))
     return null
+*/
 
   const characters = await getCharacters(profile)
 

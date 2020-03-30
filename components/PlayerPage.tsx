@@ -22,8 +22,8 @@ export default ({ month, profile }: { month: string, profile: Profile }) =>
                 month={month}
                 profile={profile}
               />
-              <br />
-              <PremiumInfo />
+              { /* <br />
+              <PremiumInfo /> */ }
             </>
           )
           : <Hello />

@@ -5,6 +5,18 @@ import Nav from './Layout/Nav'
 import Header from './Layout/Header'
 import Footer from './Layout/Footer'
 
+const GlobalStyle = () =>
+  <style jsx global>{`
+    html, body {
+      height: 100%;
+    }
+    #__next {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+  `}</style>
+
 export default ({ children }) =>
   <>
     <Head>
@@ -20,17 +32,12 @@ export default ({ children }) =>
       <meta name="apple-mobile-web-app-status-bar-style" content="#303030"/>
       <meta name="apple-mobile-web-app-title" content="MargoStats"/>
       <link rel="apple-touch-icon" href="/static/apple-touch-icon.png"/>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
+      <script 
+        dangerouslySetInnerHTML={{ __html: `(adsbygoogle = window.adsbygoogle || []).push({ google_ad_client: "ca-pub-6054728470541448", enable_page_level_ads: true });` }}
+      />
     </Head>
-    <style jsx global>{`
-      html, body {
-        height: 100%;
-      }
-      #__next {
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-      }
-    `}</style>
+    <GlobalStyle />
     <Wrapper>
       <Nav />
       <Header />

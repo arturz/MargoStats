@@ -1,6 +1,6 @@
 import Card from './Card'
 import MonthPicker from './LeftPanel/MonthPicker'
-import Donate from './LeftPanel/Donate'
+//import Donate from './LeftPanel/Donate'
 import { ReactChild } from 'react'
 
 export default ({ month, children }: { month: string, children?: ReactChild }) =>
@@ -19,8 +19,10 @@ export default ({ month, children }: { month: string, children?: ReactChild }) =
           children
         }
       </Card>
+      { /* 
       <Card flat={true}>
         <Donate />
       </Card>
+      */}
     </div>
   </div>

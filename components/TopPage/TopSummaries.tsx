@@ -30,6 +30,9 @@ export default ({ month }: { month: string }) =>
     return (
       <>
         <Label month={month} />
+        <p>
+          Kursywa oznacza świat prywatny.
+        </p>
         <Table summaries={dailyStatsTopSummaries} />
       </>
     )
