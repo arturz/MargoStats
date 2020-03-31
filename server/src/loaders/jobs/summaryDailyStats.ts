@@ -3,7 +3,7 @@ import { schedule } from 'node-cron'
 import dailyStatsSummaries from '../../services/dailyStatsSummaries'
 
 export default () => {
-  schedule('1 0 * * * *', () => {
+  schedule('0 1 0 * * *', () => {
     dailyStatsSummaries()
   })
 }

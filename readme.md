@@ -8,13 +8,13 @@
 
 - **Back-end**
 
-  Path: server/src/
+  Under `server` folder.
 
-  Written in TypeScript with Express, Apollo Server (GraphQL) and Agenda for scheduling jobs.
+  Express, Apollo (GraphQL), x-ray with TypeScript.
 
 ## Development
 
-In the beginning you must compile TypeScript on server to JS - run `npm run build-server`.
+In the beginning you must compile TypeScript on server to JS with `npm run build-server`.
 
 Run `npm run x` or `node server` to start front-end and back-end at the same time (on port 80).
 
@@ -22,6 +22,12 @@ If you would like to run only client, run `npm run dev` (it will start on port 3
 
 ## Production
 
-At first, you have to build client and server. To accomplish it you just have to run `npm run build`.
+At first, you have to build client and server with `npm run build`, then just run `node server.js` with NODE_ENV environment variable set to "production".
 
-Then just run `node server.js` with NODE_ENV environment variable set to "production".
+## Environment variables
+- `DAILY_STATS_INTERVAL` (default 2)
+- `MYSQL_HOST`
+- `MYSQL_USER`
+- `MYSQL_PASSWORD`
+- `MYSQL_DATABASE`
+- `NODE_ENV`

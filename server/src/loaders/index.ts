@@ -6,6 +6,7 @@ import loadSubscribers from '../subscribers/index'
 /* import loadAgenda from './agenda' */
 import loadExpress from './express'
 import loadApollo from './apollo'
+import loadJobs from './jobs'
 
 export default async (app?: express.Application) => {
   if(!isProduction)
@@ -15,9 +16,9 @@ export default async (app?: express.Application) => {
   const emitter: EventEmitter2 = await loadSubscribers()
   console.log(`Subscribers loaded!`)
 
-  /* console.log(`Loading agenda...`)
-  const agenda: Agenda = await loadAgenda()
-  console.log(`Agenda loaded!`) */
+  console.log(`Loading jobs...`)
+  await loadJobs()
+  console.log(`Jobs loaded!`)
 
   if(app){
     console.log(`Received preloaded express app`)
