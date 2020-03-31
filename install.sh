@@ -1,9 +1,9 @@
-npm list tsc || npm install tsc
-npm list concurrently || npm install concurrently
+npm list tsc || npm install -g typescript
+npm list concurrently || npm install -g concurrently
 #install/update packages
-npm install
+NODE_ENV= npm install
 cd server
-npm install
+NODE_ENV= npm install
 cd ..
 #build server and client
 npm run build

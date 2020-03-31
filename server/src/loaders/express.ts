@@ -5,7 +5,7 @@ import { isProduction } from '../../config'
 
 const app: express.Application = express()
 
-const port = 80
+const port = process.env.PORT || 80
 
 export default () => {
   app.listen(port)
