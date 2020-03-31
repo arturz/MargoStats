@@ -1,9 +1,16 @@
-import Agenda from 'agenda'
-import { mongodbUri, isProduction } from '../../config'
-import dailyStats from '../jobs/dailyStats'
-import dailyStatsSummaries from '../jobs/summaryDailyStats'
+//import Agenda from 'agenda'
+import { isProduction } from '../../config'
+import dailyStats from './jobs/dailyStats'
+import dailyStatsSummaries from './jobs/summaryDailyStats'
 
-export default async () => {
+export default () => {
+  if(isProduction){
+    dailyStats()
+    dailyStatsSummaries()
+  }
+}
+
+/* export default async () => {
   const agenda: Agenda = new Agenda({
     db: {
       address: mongodbUri,
@@ -19,4 +26,4 @@ export default async () => {
   }
 
   return agenda
-}
+} */

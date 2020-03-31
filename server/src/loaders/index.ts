@@ -1,9 +1,9 @@
 import express from 'express'
-import Agenda from 'agenda'
-import { EventEmitter2 } from 'eventemitter2'
+/* import Agenda from 'agenda' */
+import { EventEmitter2 } from  'eventemitter2'
 import { isProduction } from '../../config'
 import loadSubscribers from '../subscribers/index'
-import loadAgenda from './agenda'
+/* import loadAgenda from './agenda' */
 import loadExpress from './express'
 import loadApollo from './apollo'
 
@@ -15,15 +15,16 @@ export default async (app?: express.Application) => {
   const emitter: EventEmitter2 = await loadSubscribers()
   console.log(`Subscribers loaded!`)
 
-  console.log(`Loading agenda...`)
+  /* console.log(`Loading agenda...`)
   const agenda: Agenda = await loadAgenda()
-  console.log(`Agenda loaded!`)
+  console.log(`Agenda loaded!`) */
 
   if(app){
     console.log(`Received preloaded express app`)
   } else {
     console.log(`Loading express...`)
-    app = await loadExpress({ agenda })
+    app = await loadExpress()
+    /* app = await loadExpress({ agenda }) */
     console.log(`Express loaded!`)
   }
 
