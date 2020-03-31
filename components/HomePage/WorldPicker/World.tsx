@@ -17,7 +17,7 @@ export default ({ world, private: isPrivate, router }: WorldPrivateRouter) =>
     <a>
       <input 
         type="button"
-        className={`btn m-1 ${router.query.world === world ? 'btn-success' : 'btn-outline-success'}`}
+        className={`btn btn-sm m-1 ${router.query.world === world ? 'btn-success' : 'btn-outline-success'}`}
         value={world}
       />
     </a>

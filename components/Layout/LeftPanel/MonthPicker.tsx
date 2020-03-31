@@ -38,7 +38,7 @@ export default ({ month }: { month: string }) => {
       <div className="form-group">
         <Picker
           ref={picker}
-          years={[2019]}
+          years={range(2019, new Date().getFullYear())}
           value={state}
           onChange={handleMonthChange}
           theme="dark"
@@ -54,4 +54,13 @@ export default ({ month }: { month: string }) => {
       </div>
     </fieldset>
   )
+}
+
+function range(min, max) {
+  var len = max - min + 1;
+  var arr = new Array(len);
+  for (var i=0; i<len; i++) {
+    arr[i] = min + i;
+  }
+  return arr;
 }
