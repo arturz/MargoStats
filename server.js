@@ -7,6 +7,8 @@ const dev = process.env.NODE_ENV !== 'production'
 const nextApp = next({ dev })
 const handle = nextApp.getRequestHandler()
 
+const port = process.env.PORT || 80
+
 nextApp.prepare().then(() => {
   const app = express()
 
@@ -32,7 +34,7 @@ nextApp.prepare().then(() => {
     return handle(req, res)
   })
 
-  app.listen(80, (err) => {
+  app.listen(port, (err) => {
     if(err)
       throw err
 
