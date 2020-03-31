@@ -1,5 +1,6 @@
 import dotenv from 'dotenv'
 
+//{ path: path.resolve(process.cwd(), '.env') }
 dotenv.config()
 
 //in minutes

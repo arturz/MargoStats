@@ -3,9 +3,7 @@ import { HttpLink } from 'apollo-link-http'
 
 const config = {
   link: new HttpLink({
-    uri: process.env.NODE_ENV === 'production'
-      ? 'https://margostats.pl/graphql'
-      : 'http://localhost/graphql',
+    uri: process.env.HOSTNAME ? `http://${process.env.HOSTNAME}/graphql` : 'http://localhost/graphql',
     credentials: 'same-origin'
   }),
   onError(error){

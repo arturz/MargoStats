@@ -1,5 +1,5 @@
 import gql from 'graphql-tag'
-import { Query } from 'react-apollo'
+import { useQuery } from '@apollo/react-hooks'
 import Worlds from './WorldPicker/Worlds'
 
 const GET_WORLDS = gql`
@@ -11,25 +11,24 @@ const GET_WORLDS = gql`
   }
 `
 
-export default () =>
-  <Query query={GET_WORLDS}>
-    { ({ loading, error, data }) => {
-      if(loading)
-        return <span>Ładowanie światów...</span>
+export default () => {
+  const { loading, error, data } = useQuery(GET_WORLDS)
 
-      if(error)
-        return <span>Nie można pobrać światów :(</span>
+  if(loading)
+    return <span>Ładowanie światów...</span>
 
-      const [publics, privates] = data.worlds.reduce(([ publics, privates ], world) => {
-        if(world.private){
-          privates.push(world)
-          return [ publics, privates ]
-        }
+  if(error)
+    return <span>Nie można pobrać światów :(</span>
 
-        publics.push(world)
-        return [ publics, privates ]
-      }, [[], []])
+  const [publics, privates] = data.worlds.reduce(([ publics, privates ], world) => {
+    if(world.private){
+      privates.push(world)
+      return [ publics, privates ]
+    }
 
-      return <Worlds publics={publics} privates={privates} />
-    }}
-  </Query>
+    publics.push(world)
+    return [ publics, privates ]
+  }, [[], []])
+
+  return <Worlds publics={publics} privates={privates} />
+}

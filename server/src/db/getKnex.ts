@@ -14,7 +14,6 @@ const options = {
     user: mysqlUser,
     password: mysqlPassword,
     database: mysqlDatabase,
-    timezone: 'UTC',
     //don't convert MySQL date to Date object (MySQL doesn't save timezones)
     dateStrings: ['DATE', 'DATETIME']
   },

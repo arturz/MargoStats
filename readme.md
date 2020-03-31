@@ -16,18 +16,21 @@
 
 In the beginning you must compile TypeScript on server to JS with `npm run build-server`.
 
-Run `npm run x` or `node server` to start front-end and back-end at the same time (on port 80).
+Run `node server` to start front-end and back-end at the same time (on port 80).
 
-If you would like to run only client, run `npm run dev` (it will start on port 3000).
+Development front-end server: `npm run dev` (it will start on port 3000).
 
 ## Production
 
 At first, you have to build client and server with `npm run build`, then just run `node server.js` with NODE_ENV environment variable set to "production".
 
 ## Environment variables
-- `DAILY_STATS_INTERVAL` (default 2)
-- `MYSQL_HOST`
-- `MYSQL_USER`
-- `MYSQL_PASSWORD`
-- `MYSQL_DATABASE`
-- `NODE_ENV`
+```
+DAILY_STATS_INTERVAL=2
+MYSQL_HOST=
+MYSQL_USER=
+MYSQL_PASSWORD=
+MYSQL_DATABASE=
+HOSTNAME=localhost
+NODE_ENV=
+```
