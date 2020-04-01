@@ -11,7 +11,7 @@ export default async ({ knex }: { knex: createKnex }) => {
     table.dateTime('day').notNullable()
     table.string('world', 20).notNullable()
     table.boolean('private').notNullable()
-    table.string('nick', 20).notNullable()
+    table.string('nick', 30).notNullable()
 
     //time spent in game
     table.integer('minutes').defaultTo(dailyStatsInterval)

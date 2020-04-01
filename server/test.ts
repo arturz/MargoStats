@@ -1,14 +1,8 @@
-import getMinutesPlayed from './src/controllers/getCharactersWithMinutesPlayed'
+import getCharacters from './src/services/dailyStats/getCharacters'
 
 ;(async () => {
-  console.log(
-    JSON.stringify(
-      await getMinutesPlayed({
-        month: '2019-06-30T22:00:00.000Z',
-        profile: 6547222
-      }),
-      null,
-      ' '
-    )
-  )
+  const characters = await getCharacters()
+  console.log('swiaty prywatne: ', characters.filter(({ private: isPrivate }) => isPrivate).length)
+  console.log('swiaty publiczne: ', characters.filter(({ private: isPrivate }) => !isPrivate).length)
+  console.log('nicki dluzsze niz 20 znakow: ', characters.filter(({ nick }) => nick.length > 20))
 })()
