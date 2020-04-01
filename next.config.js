@@ -28,14 +28,20 @@ const withInjection = (nextConfig = {}) => ({
   }
 })
 
-module.exports = withInjection(
-  withOffline(
-    withBundleAnalyzer(
-      withCSS({
-        cssLoaderOptions: {
-          url: false
-        }
-      })
+module.exports = {
+  ...withInjection(
+    withOffline(
+      withBundleAnalyzer(
+        withCSS({
+          cssLoaderOptions: {
+            url: false
+          }
+        })
+      )
     )
-  )
-)
+  ),
+  publicRuntimeConfig: {
+    PORT: process.env.PORT,
+    HOSTNAME: process.env.HOSTNAME
+  }
+}
