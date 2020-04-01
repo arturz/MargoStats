@@ -9,7 +9,7 @@ export default async ({ knex }: { knex: createKnex }) => {
 
   await knex.schema.createTable(name, table => {
     table.dateTime('day').notNullable()
-    table.string('world', 20).notNullable()
+    table.string('world', 25).notNullable()
     table.boolean('private').notNullable()
     table.string('nick', 30).notNullable()
 

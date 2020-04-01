@@ -7,7 +7,7 @@ export default async ({ knex }: { knex: createKnex }) => {
     return
 
   await knex.schema.createTable(name, table => {
-    table.string('world', 20).notNullable().index()
+    table.string('world', 25).notNullable().index()
     table.boolean('private').notNullable()
     table.primary(['world', 'private'])
   })

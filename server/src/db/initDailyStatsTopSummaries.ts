@@ -11,9 +11,9 @@ export default async ({ knex }: { knex: createKnex }) => {
     table.integer('index').notNullable()
     table.primary(['month', 'index'])
 
-    table.string('world', 20).notNullable()
+    table.string('world', 25).notNullable()
     table.boolean('private').notNullable()
-    table.string('nick', 20).notNullable()
+    table.string('nick', 30).notNullable()
     table.integer('minutes').notNullable().index('minutes')
   })
 
