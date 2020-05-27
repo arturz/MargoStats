@@ -4,7 +4,7 @@ import dailyStats from '../../services/dailyStats'
 import { dailyStatsInterval } from '../../../config.js'
 
 export default () => {
-  schedule(`* */${dailyStatsInterval} * * * *`, () => {
+  schedule(`0 */${dailyStatsInterval} * * * *`, () => {
     dailyStats({ dailyStatsInterval })
   })
 }
