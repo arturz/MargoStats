@@ -1,4 +1,4 @@
-import HomePage from '../components/HomePage'
+import WorldPage from '../components/WorldPage'
 import withApollo from '../lib/withApollo'
 import atob from '../lib/atob'
 import getCurrentMonth from '../lib/getCurrentMonth'
@@ -10,14 +10,14 @@ interface WorldPrivateMonthFromQuery {
 }
 
 const Page = ({ world, private: isPrivate, month }: WorldPrivateMonthFromQuery) =>
-  <HomePage
-    world={world}
+  <WorldPage
+    world={world === null ? 'aldous' : world}
     private={isPrivate === '1' ? true : false}
     month={month ? atob(month) : getCurrentMonth().toISOString()}
   />
 
 Page.getInitialProps = ({ query }) => {
-  const world = (query.world || '').toLowerCase()
+  const world = query.world ? query.world.toString().toLowerCase() : null
   const isPrivate = query.private
   const month = query.month || ''
 
