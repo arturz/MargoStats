@@ -49,14 +49,6 @@ export default withRouter(({ router: { pathname } }) => {
               Sprawdź gracza
             </NavLink>
           </ul>
-          <ul className="nav navbar-nav ml-auto">
-            <NavLink href="/account" pathname={pathname}>
-              <span className="d-flex align-items-center">
-                <FaUser />
-                <span className="ml-2">Zaloguj</span>
-              </span>
-            </NavLink>
-          </ul>
         </div>
       </div>
     </nav>
