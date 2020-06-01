@@ -11,6 +11,7 @@ import World from '../../../types/World'
 export default async () => {
   const knex = await getKnex()
 
+  //first day calculates summaries for previous month
   const month = isFirstDayOfMonth()
     ? getPreviousMonth()
     : getCurrentMonth()

@@ -1,4 +1,4 @@
-import getCharacters from './src/services/dailyStats/getCharacters'
+import getCharacters from '../src/services/dailyStats/getCharacters'
 
 ;(async () => {
   const characters = await getCharacters()

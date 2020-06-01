@@ -6,7 +6,7 @@ import Profile from '../../../types/Profile'
 import { CharactersWithMinutesPlayed } from '../../../types/CharacterWithMinutesPlayed'
 
 interface Props {
-  month: string | Date,
+  month: Date,
   profile: Profile,
   requirePromo?: boolean
 }

@@ -9,14 +9,14 @@ export default {
     async worlds(){
       return await getWorlds()
     },
-    async dailyStatsSummaries(_: any, { month, world, private: isPrivate }: { month: Date | string, world: string, private: boolean }){
-      return await getDailyStatsSummaries({ month, world, private: isPrivate })
+    async dailyStatsSummaries(_: any, { month, world, private: isPrivate }: { month: string, world: string, private: boolean }){
+      return await getDailyStatsSummaries({ month: new Date(month), world, private: isPrivate })
     },
-    async dailyStatsTopSummaries(_: any, { month }: { month: Date | string }){
-      return await getDailyStatsTopSummaries({ month })
+    async dailyStatsTopSummaries(_: any, { month }: { month: string }){
+      return await getDailyStatsTopSummaries({ month: new Date(month) })
     },
-    async charactersWithMinutesPlayed(_: any, { month, profile }: { month: Date | string, profile: number }){
-      const charactersWithMinutesPlayed = await getCharactersWithMinutesPlayed({ month, profile })
+    async charactersWithMinutesPlayed(_: any, { month, profile }: { month: string, profile: number }){
+      const charactersWithMinutesPlayed = await getCharactersWithMinutesPlayed({ month: new Date(month), profile })
       if(charactersWithMinutesPlayed === null){
         throw new AuthenticationError('Nie znaleziono linku na profilu')
       }
